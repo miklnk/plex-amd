@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-AMDGPU_RELEASE=${AMDGPU_RELEASE:-6.1.2}
+AMDGPU_RELEASE=${AMDGPU_RELEASE:-6.1.3}
 
 # Determine if setup is needed
 if [ ! -f "/usr/bin/apt" ]; then
