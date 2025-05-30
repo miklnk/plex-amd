@@ -18,7 +18,7 @@ fi
 if [ ! -f "/etc/apt/sources.list.d/amdgpu-focal.list" ]; then
     echo "**** Adding amdgpu repo ****"
     curl -fsSL https://repo.radeon.com/rocm/rocm.gpg.key | gpg --dearmor | tee /usr/share/keyrings/rocm.gpg >/dev/null
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/rocm.gpg] https://repo.radeon.com/rocm/apt/${AMDGPU_RELEASE} ubuntu main" > /etc/apt/sources.list.d/amdgpu-focal.list
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/rocm.gpg] https://repo.radeon.com/rocm/apt/${AMDGPU_RELEASE} nobel main" > /etc/apt/sources.list.d/amdgpu-focal.list
 fi
 
 
