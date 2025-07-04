@@ -13,7 +13,7 @@ if [ ! -f "/etc/apt/sources.list.d/kisak-mesa.list" ]; then
     echo "**** Adding kisak-mesa repo ****"
     curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xF63F0F2B90935439" | gpg --dearmor | tee /usr/share/keyrings/kisak-mesa.gpg >/dev/null
     source /etc/lsb-release
-    echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu nobel main" > /etc/apt/sources.list.d/kisak-mesa.list
+    echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu plucky main" > /etc/apt/sources.list.d/kisak-mesa.list
 fi
 
 if [ ! -f "/etc/apt/sources.list.d/rocm.list" ]; then
@@ -24,7 +24,7 @@ if [ ! -f "/etc/apt/sources.list.d/rocm.list" ]; then
 fi
 
 
-pkgs='mesa-vdpau-drivers mesa-va-drivers mesa-vdpau-drivers libdrm-radeon1 rocm-opencl-runtime'
+pkgs='mesa-vdpau-drivers mesa-va-drivers libdrm-radeon1 rocm-opencl-runtime'
 
 install=false
 for pkg in $pkgs; do
