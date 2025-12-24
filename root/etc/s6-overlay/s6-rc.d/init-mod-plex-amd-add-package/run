@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 
-AMDGPU_RELEASE=${AMDGPU_RELEASE:-6.4.3}
+AMDGPU_RELEASE=${AMDGPU_RELEASE:-7.1}
 
 
 # Determine if setup is needed
@@ -13,7 +13,7 @@ if [ ! -f "/etc/apt/sources.list.d/kisak-mesa.list" ]; then
     echo "**** Adding kisak-mesa repo ****"
     curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xF63F0F2B90935439" | gpg --dearmor | tee /usr/share/keyrings/kisak-mesa.gpg >/dev/null
     source /etc/lsb-release
-    echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu plucky main" > /etc/apt/sources.list.d/kisak-mesa.list
+    echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu questing main" > /etc/apt/sources.list.d/kisak-mesa.list
 fi
 
 if [ ! -f "/etc/apt/sources.list.d/rocm.list" ]; then
