@@ -24,7 +24,7 @@ if [ ! -f "/etc/apt/sources.list.d/rocm.list" ]; then
 fi
 
 
-pkgs='mesa-vdpau-drivers mesa-va-drivers libdrm-radeon1 rocm-opencl-runtime'
+pkgs='mesa-vdpau-drivers mesa-va-drivers libdrm-radeon1 rocm-opencl-runtime libdrm-common'
 
 install=false
 for pkg in $pkgs; do
