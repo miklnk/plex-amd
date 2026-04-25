@@ -13,13 +13,13 @@ if [ ! -f "/etc/apt/sources.list.d/kisak-mesa.list" ]; then
     echo "**** Adding kisak-mesa repo ****"
     curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xF63F0F2B90935439" | gpg --dearmor | tee /usr/share/keyrings/kisak-mesa.gpg >/dev/null
     source /etc/lsb-release
-    echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu questing main" > /etc/apt/sources.list.d/kisak-mesa.list
+    echo "deb [signed-by=/usr/share/keyrings/kisak-mesa.gpg] http://ppa.launchpad.net/kisak/kisak-mesa/ubuntu resolute main" > /etc/apt/sources.list.d/kisak-mesa.list
 fi
 
 if [ ! -f "/etc/apt/sources.list.d/rocm.list" ]; then
     echo "**** Adding ROCm repo ****"
     curl -fsSL https://repo.radeon.com/rocm/rocm.gpg.key | gpg --dearmor | tee /usr/share/keyrings/rocm.gpg >/dev/null
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/rocm.gpg] https://repo.radeon.com/rocm/apt/${AMDGPU_RELEASE} noble main" >> /etc/apt/sources.list.d/rocm.list
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/rocm.gpg] https://repo.radeon.com/rocm/apt/${AMDGPU_RELEASE} resolute main" >> /etc/apt/sources.list.d/rocm.list
     echo -e 'Package: *\nPin: release o=repo.radeon.com\nPin-Priority: 600' | tee /etc/apt/preferences.d/rocm-pin-600
 fi
 
